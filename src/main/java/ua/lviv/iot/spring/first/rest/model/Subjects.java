@@ -20,8 +20,8 @@ public class Subjects {
     private String name;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "student_subjects", joinColumns = {
-            @JoinColumn(name = "subject_id", nullable = false) }, inverseJoinColumns = {
-                    @JoinColumn(name = "student_id", nullable = false) })
+            @JoinColumn(name = "subject_id", nullable = false)}, inverseJoinColumns = {
+            @JoinColumn(name = "student_id", nullable = false)})
     @JsonIgnoreProperties("subjects")
     private Set<Student> students;
 

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -59,7 +60,7 @@ public class StudentsController {
 
     @PutMapping(path = "/{id}")
     public ResponseEntity<Student> updateStudent(final @PathVariable("id") Integer studentID,
-            final @RequestBody Student student) {
+                                                 final @RequestBody Student student) {
         student.setId(studentID);
         HttpStatus status = students.put(student.getId(), student) == null ? HttpStatus.NOT_FOUND
                 : HttpStatus.OK;
